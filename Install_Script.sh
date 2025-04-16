@@ -12,11 +12,12 @@ sudo rm ffuf_2.1.0_linux_amd64.tar.gz CHANGELOG.md LICENSE README.md
 cd /home/ubuntu/tools
 wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export GOCACHE=$HOME/.cache/go-build
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin | tee -a ~/.bashrc
+export GOPATH=$HOME/go | tee -a ~/.bashrc
+export GOCACHE=$HOME/.cache/go-build | tee -a ~/.bashrc
+export PATH=$PATH:$GOPATH/bin | tee -a ~/.bashrc
 rm go1.24.2.linux-amd64.tar.gz
+source ~/.bashrc
 go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 sudo cp /go/bin/nuclei /usr/local/bin/
 
@@ -51,5 +52,6 @@ pipx install git+https://github.com/Pennyw0rth/NetExec --force
 pipx install git+https://github.com/ly4k/Certipy.git --force
 pipx install git+https://github.com/fortra/impacket.git --force
 export PATH=$PATH:/home/ubuntu/.local/bin | tee -a ~/.bashrc
+source ~/.bashrc
 
 sudo gem install wpscan
