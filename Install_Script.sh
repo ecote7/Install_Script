@@ -18,7 +18,7 @@ echo 'export GOCACHE=$HOME/.cache/go-build' | tee -a /etc/profile.d/golang.sh
 echo 'export PATH=$PATH:$GOPATH/bin' | tee -a /etc/profile.d/golang.sh
 chmod 644 /etc/profile.d/golang.sh
 rm go1.24.2.linux-amd64.tar.gz
-source /etc/profile
+. /etc/profile
 go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 cp /go/bin/nuclei /usr/local/bin/
 
