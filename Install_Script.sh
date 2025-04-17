@@ -25,7 +25,7 @@ cp /go/bin/nuclei /usr/local/bin/
 git clone https://github.com/lgandx/Responder.git
 git clone https://github.com/drwetter/testssl.sh.git
 git clone https://github.com/internetwache/GitTools.git
-git clone https://github.com/danielmiessler/SecLists.git
+#git clone https://github.com/danielmiessler/SecLists.git
 git clone https://github.com/aboul3la/Sublist3r.git
 git clone https://github.com/dirkjanm/BloodHound.py
 git clone https://github.com/trufflesecurity/trufflehog.git
@@ -43,10 +43,10 @@ unzip aquatone_linux_amd64_1.7.0.zip
 rm aquatone_linux_amd64_1.7.0.zip
 
 cd /home/ubuntu/tools
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb | tee -a msfinstall
-chmod +x msfinstall
-./msfinstall
-msfdb init
+#curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb | tee -a msfinstall
+#chmod +x msfinstall
+#./msfinstall
+#msfdb init
 
 pipx ensurepath
 pipx install git+https://github.com/Pennyw0rth/NetExec --force
