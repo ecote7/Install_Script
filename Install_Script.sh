@@ -22,7 +22,6 @@ export GOPATH=$HOME/go | tee -a /home/ubuntu/.bashrc
 export GOCACHE=$HOME/.cache/go-build | tee -a /home/ubuntu/.bashrc
 export PATH=$PATH:$GOPATH/bin | tee -a /home/ubuntu/.bashrc
 rm go1.24.2.linux-amd64.tar.gz
-source ~/.bashrc
 go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 sudo cp /go/bin/nuclei /usr/local/bin/
 
