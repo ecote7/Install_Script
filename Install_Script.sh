@@ -54,10 +54,17 @@ cd /home/ubuntu/tools
 #./msfinstall
 #msfdb init
 
-pipx ensurepath
-pipx install git+https://github.com/Pennyw0rth/NetExec --force
-pipx install git+https://github.com/ly4k/Certipy.git --force
-pipx install git+https://github.com/fortra/impacket.git --force
-echo 'export PATH=$PATH:/home/ubuntu/.local/bin' | tee -a /etc/profile
+export PIPX_HOME=/opt/pipx
+export PIPX_BIN_DIR=/usr/local/bin
+echo 'export PIPX_HOME=/opt/pipx' | tee -a /etc/profile.d/pipx.sh
+echo 'export PIPX_BIN_DIR=/usr/local/bin' | tee -a /etc/profile.d/pipx.sh
+chmod 644 /etc/profile.d/pipx.sh
+sudo mkdir -p "$PIPX_HOME"
+sudo chown root:root "$PIPX_HOME"
+sudo chmod 755 "$PIPX_HOME"
+sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https://github.com/Pennyw0rth/NetExec --force
+sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https://github.com/ly4k/Certipy.git --force
+sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https://github.com/fortra/impacket.git --force
+
 
 sudo gem install wpscan
