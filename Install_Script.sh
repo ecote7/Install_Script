@@ -12,10 +12,10 @@ rm ffuf_2.1.0_linux_amd64.tar.gz CHANGELOG.md LICENSE README.md
 cd /home/ubuntu/tools
 wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
-echo "PATH=$PATH:/usr/local/go/bin" | tee -a /etc/profile.d/golang.sh
-echo "GOPATH=$HOME/go" | tee -a /etc/profile.d/golang.sh
-echo "GOCACHE=$HOME/.cache/go-build" | tee -a /etc/profile.d/golang.sh
-echo "PATH=$PATH:$GOPATH/bin" | tee -a /etc/profile.d/golang.sh
+echo 'PATH=\$PATH:/usr/local/go/bin' | tee -a /etc/profile.d/golang.sh
+echo 'GOPATH=\$HOME/go' | tee -a /etc/profile.d/golang.sh
+echo 'GOCACHE=\$HOME/.cache/go-build' | tee -a /etc/profile.d/golang.sh
+echo 'PATH=\$PATH:\$GOPATH/bin' | tee -a /etc/profile.d/golang.sh
 chmod 644 /etc/profile.d/golang.sh
 rm go1.24.2.linux-amd64.tar.gz
 source /etc/profile
@@ -52,6 +52,6 @@ pipx ensurepath
 pipx install git+https://github.com/Pennyw0rth/NetExec --force
 pipx install git+https://github.com/ly4k/Certipy.git --force
 pipx install git+https://github.com/fortra/impacket.git --force
-echo "PATH=$PATH:/home/ubuntu/.local/bin" | tee -a /etc/profile
+echo 'PATH=\$PATH:/home/ubuntu/.local/bin' | tee -a /etc/profile
 
 sudo gem install wpscan
