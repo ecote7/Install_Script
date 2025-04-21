@@ -17,15 +17,15 @@ chown ubuntu /home/ubuntu/tools
 #export GOPATH=$HOME/go
 #export GOCACHE=$HOME/.cache/go-build
 #export PATH=$PATH:$GOPATH/bin
-echo "Go version: $(go version)"
-#echo 'export PATH=$PATH:/usr/local/go/bin' | tee -a /etc/profile.d/golang.sh
-#echo 'export GOPATH=$HOME/go' | tee -a /etc/profile.d/golang.sh
-#echo 'export GOCACHE=$HOME/.cache/go-build' | tee -a /etc/profile.d/golang.sh
-#echo 'export PATH=$PATH:$GOPATH/bin' | tee -a /etc/profile.d/golang.sh
-#chmod 644 /etc/profile.d/golang.sh
+echo 'export PATH=$PATH:/usr/local/go/bin' | tee -a /etc/profile.d/golang.sh
+echo 'export GOPATH=$HOME/go' | tee -a /etc/profile.d/golang.sh
+echo 'export GOCACHE=$HOME/.cache/go-build' | tee -a /etc/profile.d/golang.sh
+echo 'export PATH=$PATH:$GOPATH/bin' | tee -a /etc/profile.d/golang.sh
+chmod 644 /etc/profile.d/golang.sh
 #rm go1.24.2.linux-amd64.tar.gz
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-cp /go/bin/nuclei /usr/local/bin/
+#go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+#cp /go/bin/nuclei /usr/local/bin/
+sudo env "GOBIN=/usr/local/bin" go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 
 #git clone https://github.com/lgandx/Responder.git
 #git clone https://github.com/drwetter/testssl.sh.git
