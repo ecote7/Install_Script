@@ -6,12 +6,11 @@ mkdir /home/ubuntu/tools
 cd /home/ubuntu/tools
 chown ubuntu /home/ubuntu/tools
 
-wget https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_linux_amd64.tar.gz
-tar -xvf ffuf_2.1.0_linux_amd64.tar.gz
-mv ffuf /usr/local/bin/
-rm ffuf_2.1.0_linux_amd64.tar.gz CHANGELOG.md LICENSE README.md
+#wget https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_linux_amd64.tar.gz
+#tar -xvf ffuf_2.1.0_linux_amd64.tar.gz
+#mv ffuf /usr/local/bin/
+#rm ffuf_2.1.0_linux_amd64.tar.gz CHANGELOG.md LICENSE README.md
 
-cd /home/ubuntu/tools
 wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
@@ -35,18 +34,19 @@ cp /go/bin/nuclei /usr/local/bin/
 #git clone https://github.com/aboul3la/Sublist3r.git
 #git clone https://github.com/dirkjanm/BloodHound.py
 git clone https://github.com/trufflesecurity/trufflehog.git
-cd trufflehog; go install -buildvcs=false
+cd trufflehog
+go install -buildvcs=false
 
-snap install amass
+#snap install amass
 
-cd /home/ubuntu/tools
-mkdir Aquatone
-cd Aquatone
-wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip -O aquatone_linux_amd64_1.7.0.zip
-snap install chromium
-ln -s /snap/bin/chromium /usr/bin/chromium
-unzip aquatone_linux_amd64_1.7.0.zip
-rm aquatone_linux_amd64_1.7.0.zip
+#cd /home/ubuntu/tools
+#mkdir Aquatone
+#cd Aquatone
+#wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip -O aquatone_linux_amd64_1.7.0.zip
+#snap install chromium
+#ln -s /snap/bin/chromium /usr/bin/chromium
+#unzip aquatone_linux_amd64_1.7.0.zip
+#rm aquatone_linux_amd64_1.7.0.zip
 
 cd /home/ubuntu/tools
 #curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb | tee -a msfinstall
@@ -67,4 +67,4 @@ sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https:
 sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https://github.com/fortra/impacket.git --force
 
 
-sudo gem install wpscan
+#sudo gem install wpscan
