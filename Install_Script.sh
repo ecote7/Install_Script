@@ -37,7 +37,7 @@ wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_
 snap install chromium
 ln -s /snap/bin/chromium /usr/bin/chromium
 unzip aquatone_linux_amd64_1.7.0.zip
-sudo cp Aquatone/aquatone /usr/local/bin/
+sudo cp aquatone /usr/local/bin/
 rm aquatone_linux_amd64_1.7.0.zip
 
 cd /home/ubuntu/tools
