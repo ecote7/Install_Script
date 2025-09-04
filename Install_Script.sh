@@ -1,10 +1,13 @@
 #!/bin/bash
 
-apt install make golang-go net-tools plocate proxychains wafw00f socat masscan nmap python3 python3-pip python3-venv python3-impacket python3-pycryptodome python3-typer python3-tabulate python3-pandas python3-requests-toolbelt python3-requests-ntlm python3-cmd2 python3-ldap3 smbclient sqlmap ruby-full build-essential libffi-dev libssl-dev libldap2-dev libsasl2-dev libkrb5-dev libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev zlib1g zlib1g-dev libpq-dev libpcap-dev libsqlite3-dev ldap-utils libffi-dev pipx git zip unzip faketime libfdt1 libpixman-1-0 libpng16-16 liboss4-salsa-asound2 libglib2.0-0 autoconf bison libncurses5-dev libreadline-dev libyaml-dev libgdbm-dev python3-aioquic -y 
+apt install make golang-go net-tools plocate proxychains wafw00f socat masscan nmap python3 python3-pip python3-venv python3-impacket python3-pycryptodome python3-typer python3-tabulate python3-pandas python3-requests-toolbelt python3-requests-ntlm python3-cmd2 python3-ldap3 smbclient sqlmap ruby-full build-essential libffi-dev libssl-dev libldap2-dev libsasl2-dev libkrb5-dev libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev zlib1g zlib1g-dev libpq-dev libpcap-dev libsqlite3-dev ldap-utils libffi-dev pipx git zip unzip faketime libfdt1 libpixman-1-0 libpng16-16 liboss4-salsa-asound2 libglib2.0-0 autoconf bison libncurses5-dev libreadline-dev libyaml-dev libgdbm-dev python3-aioquic ike-scan -y 
 
 mkdir /home/ubuntu/tools
 cd /home/ubuntu/tools
 chown ubuntu /home/ubuntu/tools
+
+for ENC in 1 2 3 4 5 6 7/128 7/192 7/256 8; do for HASH in 1 2 3 4 5 6; do for AUTH in 1 2 3 4 5 6 7 8 64221 64222 64223 64224 65001 65002 65003 65004 65005 65006 65007 65008 65009 65010; do for GROUP in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18; do echo "--trans=$ENC,$HASH,$AUTH,$GROUP" >> ike-dict.txt ;done ;done ;done ;done
+wget https://book.hacktricks.wiki/files/vpnIDs.txt
 
 wget https://github.com/ffuf/ffuf/releases/download/v2.1.0/ffuf_2.1.0_linux_amd64.tar.gz
 tar -xvf ffuf_2.1.0_linux_amd64.tar.gz
