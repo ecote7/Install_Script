@@ -9,6 +9,7 @@ sudo ./mythic-cli install github https://github.com/MythicAgents/apfell
 sudo ./mythic-cli install github https://github.com/MythicAgents/forge
 sudo ./mythic-cli install github https://github.com/MythicAgents/apollo
 sudo ./mythic-cli install github https://github.com/MythicAgents/poseidon
+sudo ./mythic-cli install github https://github.com/MythicAgents/Athena
 
 sudo ./mythic-cli install github https://github.com/MythicC2Profiles/http
 sudo ./mythic-cli install github https://github.com/MythicC2Profiles/httpx
