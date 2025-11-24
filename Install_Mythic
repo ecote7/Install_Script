@@ -3,7 +3,6 @@ sudo git clone https://github.com/its-a-feature/Mythic.git
 cd Mythic
 sudo ./install_docker_ubuntu.sh
 sudo make
-sudo ./mythic-cli config set mythic_server_bind_localhost_only false
 
 sudo ./mythic-cli install github https://github.com/MythicAgents/apfell
 sudo ./mythic-cli install github https://github.com/MythicAgents/forge
@@ -16,4 +15,5 @@ sudo ./mythic-cli install github https://github.com/MythicC2Profiles/httpx
 sudo ./mythic-cli install github https://github.com/MythicC2Profiles/tcp.git
 sudo ./mythic-cli install github https://github.com/MythicC2Profiles/websocket
 
+sudo ./mythic-cli config set mythic_server_bind_localhost_only false
 sudo ./mythic-cli start
