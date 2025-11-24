@@ -1,4 +1,4 @@
-sudo apt install docker git make net-tools mlocate -y
+sudo apt install +wmdocker git make net-tools -y
 sudo git clone https://github.com/its-a-feature/Mythic.git
 cd Mythic
 sudo ./install_docker_ubuntu.sh
