@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt install make golang-go net-tools plocate proxychains wafw00f socat masscan nmap python3 python3-pip python3-venv python3-impacket python3-pycryptodome python3-typer python3-tabulate python3-pandas python3-requests-toolbelt python3-requests-ntlm python3-cmd2 python3-ldap3 smbclient sqlmap ruby-full build-essential libffi-dev libssl-dev libldap2-dev libsasl2-dev libkrb5-dev libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev zlib1g zlib1g-dev libpq-dev libpcap-dev libsqlite3-dev ldap-utils libffi-dev pipx git zip unzip faketime libfdt1 libpixman-1-0 libpng16-16 liboss4-salsa-asound2 libglib2.0-0 autoconf bison libncurses5-dev libreadline-dev libyaml-dev libgdbm-dev python3-aioquic ike-scan -y 
+apt install make golang-go net-tools plocate proxychains wafw00f socat masscan nmap python3 python3-pip python3-venv python3-impacket python3-pycryptodome python3-typer python3-tabulate python3-pandas python3-requests-toolbelt python3-requests-ntlm python3-cmd2 python3-ldap3 smbclient sqlmap ruby-full build-essential libffi-dev libssl-dev libldap2-dev libsasl2-dev libkrb5-dev libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev zlib1g zlib1g-dev libpq-dev libpcap-dev libsqlite3-dev ldap-utils libffi-dev pipx git zip unzip faketime libfdt1 libpixman-1-0 libpng16-16 liboss4-salsa-asound2 libglib2.0-0 autoconf bison libncurses5-dev libreadline-dev libyaml-dev libgdbm-dev python3-aioquic ike-scan dnsrecon whois sublist3r -y 
 
 mkdir /home/ubuntu/tools
 cd /home/ubuntu/tools
@@ -62,3 +62,6 @@ sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https:
 sudo env PIPX_HOME=$PIPX_HOME PIPX_BIN_DIR=$PIPX_BIN_DIR pipx install git+https://github.com/fortra/impacket.git --force
 
 sudo gem install wpscan
+
+sudo echo "PS1='\\[\\e[33m\\][\\D{%y/%m/%d %T}] \\[\\e[0m\\]\"\\\$PS1\"'" >> /home/ubuntu/.bashrc
+sudo timedatectl set-timezone America/New_York
