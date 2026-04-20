@@ -12,5 +12,4 @@ git clone https://github.com/kgretzky/evilginx2.git
 cd evilginx2
 make
 
-sudo echo "PS1='\\[\\e[33m\\][\\D{%y/%m/%d %T}] \\[\\e[0m\\]\"\\\$PS1\"'" >> /home/ubuntu/.bashrc
-sudo timedatectl set-timezone America/New_York
+timedatectl set-timezone America/New_York
