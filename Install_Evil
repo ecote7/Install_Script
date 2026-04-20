@@ -1,0 +1,14 @@
+#!/bin/bash
+
+apt install make golang-go net-tools plocate nodejs
+
+echo 'export PATH=$PATH:/usr/local/go/bin' | tee -a /etc/profile.d/golang.sh
+echo 'export GOPATH=$HOME/go' | tee -a /etc/profile.d/golang.sh
+echo 'export GOCACHE=$HOME/.cache/go-build' | tee -a /etc/profile.d/golang.sh
+echo 'export PATH=$PATH:$GOPATH/bin' | tee -a /etc/profile.d/golang.sh
+chmod 644 /etc/profile.d/golang.sh
+
+
+
+sudo echo "PS1='\\[\\e[33m\\][\\D{%y/%m/%d %T}] \\[\\e[0m\\]\"\\\$PS1\"'" >> /home/ubuntu/.bashrc
+sudo timedatectl set-timezone America/New_York
