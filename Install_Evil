@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt install make golang-go net-tools plocate nodejs -y
+apt install make golang-go net-tools plocate unzip nodejs -y
 
 echo 'export PATH=$PATH:/usr/local/go/bin' | tee -a /etc/profile.d/golang.sh
 echo 'export GOPATH=$HOME/go' | tee -a /etc/profile.d/golang.sh
@@ -11,5 +11,8 @@ chmod 644 /etc/profile.d/golang.sh
 git clone https://github.com/kgretzky/evilginx2.git
 cd evilginx2
 make
+
+sed -i 's/^#\s*DNS=.*/DNS=1.1.1.1/; s/^#\s*DNSStubListener=yes/DNSStubListener=no/' /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
 
 timedatectl set-timezone America/New_York
